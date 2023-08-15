@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th class="text-center" scope="col">Name</th>
+            <th class="text-center" scope="col">Username</th>
+            <th class="text-center" scope="col">Phone Number</th>
+            <th class="text-center" scope="col">Location</th>
+            <th class="text-center" scope="col">Email</th>
+            <th class="text-center" scope="col">Role</th>
+            <th class="text-center" scope="col">Department</th>
+            <th class="text-center" scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr app-request-tr *ngFor="let request of requests" [request]="request"></tr>
+    </tbody>
+<tbody>

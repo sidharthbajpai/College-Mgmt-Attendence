@@ -1,0 +1,20 @@
+<td>{{ request.firstName + ' ' + request.lastName }}</td>
+<td>{{ request.username }}</td>
+<td>{{ request.phoneNumber }}</td>
+<td>{{ request.location }}</td>
+<td>{{ request.email }}</td>
+<td>{{ request.roleName }}</td>
+<td>{{ request.departmentName }}</td>
+<td *ngIf="request.status !== 'UNKNOWN'">{{ request.status }}</td>
+<td *ngIf="request.status === 'UNKNOWN'">
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-success me-2" (click)="onAccept()">ACCEPT</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-danger" (click)="onDeny()">DENY</button>
+        </div>
+    </div>
+
+
+</td>

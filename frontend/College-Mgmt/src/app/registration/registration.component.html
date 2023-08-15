@@ -1,0 +1,94 @@
+<div class="row my-3">
+    <div class="col-md-8 col-12 mx-auto">
+        <div class="card">
+            <div class="card-body mx-3">
+                <h4 class="text-center mb-3">! Registration Form !</h4>
+                <form #f="ngForm" (ngSubmit)="onRegister()">
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" ngModel required
+                                #firstName="ngModel">
+                            <small *ngIf="!firstName.valid && firstName.touched" class="text-danger">Please fill first
+                                name</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" ngModel required
+                                #lastName="ngModel">
+                            <small *ngIf="!lastName.valid && lastName.touched" class="text-danger">Please fill last
+                                name</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="userName" class="form-label">UserName</label>
+                            <input type="text" class="form-control" id="userName" name="userName" ngModel required
+                                #userName="ngModel">
+                            <small *ngIf="!userName.valid && userName.touched" class="text-danger">Please fill
+                                username</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" ngModel required
+                                #password="ngModel">
+                            <small *ngIf="!password.valid && password.touched" class="text-danger">Please fill
+                                password</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" ngModel required
+                                #phoneNumber="ngModel">
+                            <small *ngIf="!phoneNumber.valid && phoneNumber.touched" class="text-danger">Please fill
+                                phone number</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <input type="text" class="form-control" id="location" name="location" ngModel required
+                                #location="ngModel">
+                            <small *ngIf="!location.valid && location.touched" class="text-danger">Please fill
+                                location</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" ngModel required email
+                                #email="ngModel">
+                            <small *ngIf="!email.valid && email.touched" class="text-danger">Please fill valid
+                                email</small>
+                        </div>
+                        <div *ngIf="!isAdminSelected()" class="col-sm-6 mb-3">
+                            <label for="department" class="form-label">Department</label>
+                            <select type="text" class="form-select" id="department" name="department" ngModel required
+                                #department="ngModel">
+                                <option *ngFor="let department of departments" [value]="department.departmentId">{{
+                                    department.departmentName }}</option>
+                            </select>
+                            <small *ngIf="!department.valid && department.touched" class="text-danger">Please choose
+                                department</small>
+                        </div>
+                        <div class="col-sm-6 mb-3">
+                            <label for="role" class="form-label">Roles</label>
+                            <select type="text" class="form-select" id="role" name="role" ngModel required
+                                #role="ngModel">
+                                <option *ngFor="let role of roles" [value]="role.roleId">{{ role.roleName }}</option>
+                            </select>
+                            <small *ngIf="!role.valid && role.touched" class="text-danger">Please choose role </small>
+                        </div>
+                        <div class="row my-3">
+                            <div class="col-4 text-center">
+                                <button type="button" class="btn btn-secondary" (click)="onLogin()">Login</button>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button type="button" class="btn btn-warning" (click)="onReset()">Reset</button>
+                            </div>
+                            <div class="col-4 text-center">
+                                <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Register</button>
+                            </div>
+                        </div>
+                        <div *ngIf="isRegistered" class="col-md-12 text-center">
+                            <p class="text-success">Registration Successful!</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

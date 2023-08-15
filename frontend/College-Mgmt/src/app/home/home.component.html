@@ -1,0 +1,51 @@
+<br>
+<h1>Welcome {{ userDetails.firstName }}</h1>
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+            </div>
+            <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ userDetails.firstName + ' ' + userDetails.lastName }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+            </div>
+            <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ userDetails.phoneNumber }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+            </div>
+            <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ userDetails.location }}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ userDetails.email }}</p>
+            </div>
+        </div>
+        <div  *ngIf="!userDetails.adminId">
+        <hr >
+        <div class="row">
+            <div class="col-sm-3">
+                <p class="mb-0">Department</p>
+            </div>
+            <div class="col-sm-9">
+                <p class="text-muted mb-0">{{ userDetails.departmentName }}</p>
+            </div>
+        </div>
+    </div>
+    </div>

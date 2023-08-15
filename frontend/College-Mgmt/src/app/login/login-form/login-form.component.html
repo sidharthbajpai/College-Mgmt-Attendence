@@ -1,0 +1,53 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-danger" role="alert" *ngIf="loginUnsuccessful">
+                {{ errorMessage }}
+              </div>
+        </div>
+        <div class="row p-0 m-0 mb-2">
+            <label for="username" class="col-sm-2 col-3 col-form-label px-1 text-end">UserName</label>
+            <div class="col-sm-8 col-8 px-1">
+                <input type="text" class="form-control" id="username" name="username" ngModel required>
+            </div>
+        </div>
+        <div class="row p-0 m-0 mb-2">
+            <label for="password" class="col-sm-2 col-3 col-form-label px-1 text-end">Password</label>
+            <div class="col-sm-8 col-8 px-1">
+                <input type="password" class="form-control" id="password" name="password" ngModel required>
+            </div>
+        </div>
+        <div class="row mb-2 justify-content-center">
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="role" id="role_student" value="student"  [ngModel]="defaultRole">
+                    <label class="form-check-label" for="role_student">
+                        Student
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="role" id="role_teacher" value="teacher" [ngModel]="defaultRole">
+                    <label class="form-check-label" for="role_teacher">
+                        Teacher
+                    </label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="role" id="role_admin" value="admin" [ngModel]="defaultRole">
+                    <label class="form-check-label" for="role_admin">
+                        Admin
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="offset-1 col-5 d-grid p-3">
+            <button type="button" class="btn btn-outline-primary" (click)="onRegistration()">Registration</button>
+        </div>
+        <div class="col-5 d-grid p-3 ">
+            <button type="submit" class="btn btn-outline-primary" [disabled]="f.invalid">Login</button>
+        </div>
+    </div>
+</form>
